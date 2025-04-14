@@ -1,8 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Light mode colors */
+  --background: #f0f9ff;       /* Soft sky blue */
+  --foreground: #0a1a2f;       /* Deep navy */
+  --text-primary: #1e293b;     /* Slate dark */
+  --text-secondary: #64748b;   /* Slate gray */
+  --nav-a-bg: #38bdf8;         /* Light blue tint */
+  --nav-a-fg: #ffffff;         /* Dark text on nav */
+
+  --btn-bg: #38bdf8;           /* Sky blue */
+  --btn-text: #ffffff;         /* White text */
+  --link: #0ea5e9;             /* Bright blue */
+  --link-hover: #0284c7;       /* Darker blue */
 }
 
 @theme inline {
@@ -14,13 +24,48 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0a1a2f;        /* Deep navy */
+    --foreground: #f0f9ff;        /* Light sky tint */
+    --text-primary: #e2e8f0;      /* Light slate */
+    --text-secondary: #94a3b8;    /* Soft slate */
+    --nav-a-bg: #ffffff;          /* Light nav button in dark bg */
+    --nav-a-fg: #000000;          /* Visible text */
+
+    --btn-bg: #0ea5e9;
+    --btn-text: #ffffff;
+    --link: #38bdf8;
+    --link-hover: #7dd3fc;
   }
+}
+
+::-webkit-scrollbar {
+  height: 0;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Navigation Buttons */
+nav a {
+  padding: 8px 20px;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Buttons */
+button {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: var(--link-hover);
 }
